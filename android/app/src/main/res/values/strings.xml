@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Skull King Scoreboard</string>
+    <string name="title_activity_main">Skull King Scoreboard</string>
+    <string name="package_name">io.skullking.score</string>
+    <string name="custom_url_scheme">io.skullking.score</string>
+</resources>
