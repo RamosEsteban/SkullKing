@@ -9,6 +9,11 @@ export const routes: Routes = [
   },
   {
     path: appUrls.start,
-    loadComponent: () => import('./start/start.page').then(m => m.StartPage)
+    loadComponent: () => import('./pages/start/start.page').then(m => m.StartPage)
   },
+  {
+    path: appUrls.gameBoard,
+    loadComponent: () => import('./game-board/game-board.page').then( m => m.GameBoardPage)
+  },
+
 ];

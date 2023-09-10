@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
-  selector: 'app-start',
-  templateUrl: './start.page.html',
-  styleUrls: ['./start.page.scss'],
+  selector: 'app-game-board',
+  templateUrl: './game-board.page.html',
+  styleUrls: ['./game-board.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class StartPage implements OnInit {
+export class GameBoardPage implements OnInit {
 
   constructor() { }
 
