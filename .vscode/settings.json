@@ -1,1 +1,116 @@
-{}
+// SPDX-License-Identifier: MIT
+// Copyright 2023 Beslogic Inc.
+// Keep in sync with https://dev.azure.com/Beslogic/Beslogic%20Architecture%20Templates/_wiki/wikis/Beslogic-Architecture-Templates.wiki/757/VSCode-settings-and-extensions-(.vscode-.code-workspace)
+{
+  "files.associations": {
+    ".eslintrc*.json": "jsonc",
+    "dprint*.json": "jsonc"
+  },
+  "files.exclude": {
+    "*.zip": true,
+    "**/node_modules": false,
+    "**/build": true,
+    "**/dist/**/*.min.js": true,
+    "**/dist/**/*.map": true,
+    "**/src/react-app-env.d.ts": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "package-lock.json": true,
+    "*.lock": true
+  },
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "[git-commit]": {
+    "editor.rulers": [
+      72
+    ]
+  },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    // "source.*Imports": https://github.com/microsoft/TypeScript/pull/50931#issuecomment-1416288712
+    // Let dedicated imports tool deal with it
+    "source.organizeImports": false,
+    "source.sortImports": false,
+    // IDEM, but also it's annoying to remove imports because of commented code while testing
+    "source.removeUnusedImports": false
+  },
+  "[json][jsonc][javascript][javascriptreact][typescript][typescriptreact][markdown][dockerfile]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  // Specify the formatter in case other formatters are also installed (ie: Prettier)
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  // The following is only needed without dprint
+  // "[json][jsonc]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  // "[javascript][javascriptreact][typescript][typescriptreact]": {
+  //   "editor.defaultFormatter": "vscode.typescript-language-features"
+  // },
+  // "[markdown]": {
+  //   "files.trimTrailingWhitespace": false,
+  // },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "html.format.wrapAttributes": "force-expand-multiline",
+  // js/ts.format.* neededed without dprint
+  // "javascript.format.semicolons": "remove",
+  // "typescript.format.semicolons": "remove",
+  // "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  // "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "eslint.validate": [
+    // For Angular: "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "eslint.codeActionsOnSave.rules": [
+    // Clearing imports and unused vars because of commented code while testing is annoying
+    "!unused-imports/no-unused-imports",
+    "!autofix/no-debugger",
+    "!autofix/no-unused-vars",
+    "*"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "downgrade"
+    }
+  ],
+  "jest.autoRun": "off",
+  // TODO: Configure stylelint so I can recommend
+  // "[css][scss][less]": {
+  //   "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  // },
+  "less.format.spaceAroundSelectorSeparator": true,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "xml.codeLens.enabled": true,
+  "xml.format.maxLineWidth": 120
+}

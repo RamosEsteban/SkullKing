@@ -9,7 +9,14 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "eslint": "eslint ./ --ignore-path .gitignore",
+    "lint": "dprint check && npm run eslint",
+    "lint:fix": "dprint fmt && npm run eslint -- --fix"
+  },
+  "// node 16": "14 won't install peer deps properly + prefer EventTarget (only available node 16)",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +59,7 @@
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
     "eslint": "^7.26.0",
+    "eslint-config-beslogic": "^1.5.5",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
